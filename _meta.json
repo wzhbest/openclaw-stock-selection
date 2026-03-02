@@ -1,0 +1,46 @@
+{
+  "name": "stock-selection-skill",
+  "displayName": "A股选股技能",
+  "description": "基于 akshare 的 A 股选股技能，支持查询所有 A 股信息、杨永兴选股策略和第二天上涨预测。无需 API Key，完全免费使用。",
+  "version": "1.0.0",
+  "author": "OpenClaw Skills",
+  "license": "MIT",
+  "main": "stock_selection_skill.py",
+  "type": "python",
+  "category": "finance",
+  "tags": ["股票", "选股", "A股", "akshare", "量化"],
+  "requirements": [
+    "akshare>=1.12.0",
+    "pandas>=1.5.0",
+    "numpy>=1.24.0"
+  ],
+  "functions": [
+    {
+      "name": "stock_selection_skill",
+      "description": "A股选股技能主函数",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query_type": {
+            "type": "string",
+            "enum": ["all", "list", "yang", "predict"],
+            "description": "查询类型：all-完整分析, list-仅查询股票列表, yang-杨永兴选股, predict-第二天上涨预测",
+            "default": "all"
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "max_workers": {
+      "type": "integer",
+      "default": 8,
+      "description": "并发处理线程数"
+    },
+    "enable_cache": {
+      "type": "boolean",
+      "default": true,
+      "description": "是否启用缓存"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "stock-selection-skill",
+  "version": "1.0.0",
+  "description": "OpenClaw Skills - A股选股技能（性能优化版）",
+  "main": "stock_selection_skill.py",
+  "scripts": {
+    "test": "python stock_selection_skill.py",
+    "install": "pip install -r requirements.txt"
+  },
+  "keywords": [
+    "openclaw",
+    "skill",
+    "stock",
+    "akshare",
+    "选股",
+    "A股"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "akshare": ">=1.12.0",
+    "pandas": ">=1.5.0",
+    "numpy": ">=1.24.0"
+  }
+}
